@@ -78,7 +78,7 @@ Después de completar el EDA y la limpieza de datos, los datos limpios estarán 
 
 ## Colaboración en Equipo
 
-Somos un equipo de 4 analistas de datos trabajando en conjunto para este proyecto. Para facilitar la colaboración:
+Somos un equipo de 5 analistas de datos trabajando en conjunto para este proyecto. Para facilitar la colaboración:
 
 1. **Uso de GitHub**:
    - Cada miembro puede trabajar en diferentes partes del análisis y crear **pull requests** para revisar cambios.
