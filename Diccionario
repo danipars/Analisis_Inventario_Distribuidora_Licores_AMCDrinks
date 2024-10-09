@@ -1,0 +1,81 @@
+ Tablas de análisis:
+
+ 2017PurchasePricesDec.csv: Contiene los precios de compra para el mes de diciembre de 2017.
+  Brand: dato tipo integer. Se relaciona con tabla de referencia con nombre de marca
+  Description: dato tipo string. Describe tipo de producto
+  Price: dato tipo moneda/número/decimal. Describe el precio de venta del producto	
+  Size: dato tipo integer. Describe la presentación de los licores
+  Volume: dato tipo integer. Describe el volumen del producto 	
+  Classification: dato tipo integer. Se relaciona con tabla de referencia con estándar de clasificación del producto.	
+  PurchasePrice: dato tipo decimal. Describe el precio de compra del producto. 
+  VendorNumber: dato tipo integer. Se relaciona con tabla de referencia con código de vendedor.	
+  VendorName: dato tipo string. Describe el nombre del vendedor. 
+
+ BegInvFINAL12312016.csv: Representar los inventarios iniciales al 31 de diciembre de 2016.
+   InventoryId: dato tipo string. KEY determina el key de inventario.
+   Store: dato tipo integer. Se relaciona con tabla de referencia con nombre de tienda
+   City: dato tipo string. describe la ciudad.	
+   Brand: dato tipo integer. Se relaciona con tabla de referencia con nombre de marca
+   Description: dato tipo string. Describe tipo de producto	
+   Size: dato tipo integer. Describe la presentación de los licores	
+   onHand: dato tipo integer. Cantidad de inventario disponible	
+   Price: dato tipo moneda/número. Describe el precio de venta del producto
+   startDate: dato tipo fecha. Describe la fecha de inicio del inventario
+
+ EndInvFINAL12312016.csv: Esta tabla muestra los inventarios finales al 31 de diciembre de 2016.
+   InventoryId: dato tipo string. Determina el key de inventario.
+   Store: dato tipo integer. Se relaciona con tabla de referencia con nombre de tienda
+   City: dato tipo string. describe la ciudad.	
+   Brand: dato tipo integer. Se relaciona con tabla de referencia con nombre de marca
+   Description: dato tipo string. Describe tipo de producto	
+   Size: dato tipo integer. Describe la presentación de los licores
+   onHand: dato tipo integer. Cantidad de inventario disponible	
+   Price: dato tipo moneda/decimal. Describe el precio de venta del producto
+    startDate: dato tipo fecha. Describe la fecha final del inventario
+
+ InvoicePurchases12312016.csv: Contiene las compras realizadas al cierre del año fiscal 2016, con información relevante sobre las facturas de compra. 
+    VendorNumber: dato tipo integer. Se relaciona con tabla de referencia con código de vendedor.
+    VendorName:	dato tipo string. Describe el nombre del vendedor.
+    InvoiceDate:	dato tipo fecha. Describe la fecha de facturación
+    PONumber: dato tipo integer. Describe el número de Orden de Compra	
+    PODate: dato tipo fecha. Describe fecha de Orden de Compra
+    PayDate: dato tipo fecha. Describe 	la fecha de pago de la factura.
+    Quantity: dato tipo integer.	
+    Dollars: dato tipo decimal/modena. Describe el valor de la factura	
+    Freight: dato tipo 	decimal/modena. Describe el valor del transporte
+    Approval: dato tipo string. Describe si tuvo aprobación 
+
+
+ PurchasesFINAL12312016.csv: Este archivo contiene información consolidada sobre las compras finales al 31 de diciembre de 2016.
+    InventoryId: dato tipo string. Determina el key de inventario.	   
+    Store: dato tipo integer. Se relaciona con tabla de referencia con nombre de tienda	
+    Brand: dato tipo integer. Se relaciona con tabla de referencia con nombre de marca	
+    Description: dato tipo string. Describe tipo de producto	
+    Size: dato tipo integer. Describe la presentación de los licores
+    VendorNumber: dato tipo integer. Se relaciona con tabla de referencia con código de vendedor.
+    VendorName:	dato tipo string. Describe el nombre del vendedor.
+    PONumber: dato tipo integer. Describe el número de Orden de Compra
+    PODate: dato tipo fecha. Describe fecha de Orden de Compra
+    ReceivingDate: dato tipo fecha. Describe la fecha en la que se recibió el producto	
+    InvoiceDate: dato tipo fecha. Describe la fecha de facturación	
+    PayDate: dato tipo fecha. Describe la fecha de pago de la factura.	
+    PurchasePrice:  dato tipo decimal. Describe el precio de compra del producto.	
+    Quantity: dato tipo integer.	
+    Dollars: dato tipo decimal/modena. Describe el valor de la factura	
+    Classification: dato tipo integer. Se relaciona con tabla de referencia con estándar de clasificación del producto.	
+
+ SalesFINAL12312016.csv: Esta tabla detalla las ventas finales al 31 de diciembre de 2016.
+    InventoryId: dato tipo string. Determina el key de inventario.	   
+    Store: dato tipo integer. Se relaciona con tabla de referencia con nombre de tienda	
+    Brand: dato tipo integer. Se relaciona con tabla de referencia con nombre de marca	
+    Description: dato tipo string. Describe tipo de producto	
+    Size: dato tipo integer. Describe la presentación de los licores
+    SalesQuantity	
+    SalesDollars: dato tipo moneda/decimal. Describe el valor de la venta en dólares	
+    SalesPrice: dato tipo moneda / decimal. Describe el precio de la venta en dólares	
+    SalesDate: 	dato tipo fecha. Describe la fecha de venta
+    Volume: dato tipo integer. Describe el volumen del producto	
+    Classification: dato tipo integer. Se relaciona con tabla de referencia con estándar de clasificación de producto.
+    ExciseTax: dato tipo decimal. Describe el valor del impuesto de la transacción 	
+    VendorNo: dato tipo integer. Se relaciona con tabla de referencia con código de vendedor externo.
+    VendorName:	dato tipo string. Describe el nombre del vendedor externo.
