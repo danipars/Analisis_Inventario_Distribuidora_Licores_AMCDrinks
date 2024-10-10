@@ -1,0 +1,101 @@
+Tabla entidad - relacion 
+
+https://dbdiagram.io/d/NEW-FAST_FOOD_DB-66bd39458b4bb5230e26a6ad
+
+// BD_AMCDrinks Database
+
+Table Precios {
+  Brand INT [pk]
+  Description VARCHAR(200)
+  Price DECIMAL(10,2)
+  Size VARCHAR(200)
+  Volume INT
+  Classification INT
+  PurchasePrice DECIMAL(10,2)
+  VendorNumber INT
+  VendorName VARCHAR(200)
+}
+
+Table OrdenesCompra {
+  PONumber INT [pk]
+  VendorNumber INT
+  VendorName VARCHAR(200)
+  InvoiceDate DATE
+  PODate DATE
+  PayDate DATE
+  Quantity INT
+  Dollars DECIMAL(10,2)
+  Freight DECIMAL(10,2)
+  Approval VARCHAR(200)
+}
+
+Table InventarioInicial {
+  InventoryId VARCHAR(50) [pk]
+  Store INT
+  City VARCHAR(50)
+  Brand INT
+  Description VARCHAR(200)
+  Size VARCHAR(200)
+  onHand INT
+  Price DECIMAL(10,2)
+  startDate DATE
+}
+
+Table InventarioFinal {
+  InventoryId VARCHAR(50) [pk]
+  Store INT
+  City VARCHAR(50)
+  Brand INT
+  Description VARCHAR(200)
+  Size VARCHAR(200)
+  onHand INT
+  Price DECIMAL(10,2)
+  endDate DATE
+}
+
+Table Compras {
+  Id_Compras INT [pk, increment]
+  InventoryId VARCHAR(50)
+  Store INT
+  Brand INT
+  Description VARCHAR(200)
+  Size VARCHAR(200)
+  VendorNumber INT
+  VendorName VARCHAR(200)
+  PONumber INT
+  PODate DATE
+  ReceivingDate DATE
+  InvoiceDate DATE
+  PayDate DATE
+  PurchasePrice DECIMAL(10,2)
+  Quantity INT
+  Dollars DECIMAL(10,2)
+  Classification VARCHAR(50)
+}
+
+Table Ventas {
+  Id_Ventas INT [pk, increment]
+  InventoryId VARCHAR(50)
+  Store INT
+  Brand INT
+  Description VARCHAR(200)
+  Size VARCHAR(200)
+  SalesQuantity INT
+  SalesDollars DECIMAL(10,2)
+  SalesPrice DECIMAL(10,2)
+  SalesDate DATE
+  Volume INT
+  Classification VARCHAR(50)
+  ExciseTax DECIMAL(10,2)
+  VendorNo INT
+  VendorName VARCHAR(200)
+}
+
+// Relationships
+Ref: Compras.PONumber > OrdenesCompra.PONumber
+Ref: Compras.Brand > Precios.Brand
+Ref: Compras.InventoryId > InventarioInicial.InventoryId
+Ref: Ventas.InventoryId > InventarioFinal.InventoryId
+Ref: Ventas.Brand > Precios.Brand
+Ref: InventarioInicial.Brand > Precios.Brand
+Ref: InventarioFinal.Brand > Precios.Brand
