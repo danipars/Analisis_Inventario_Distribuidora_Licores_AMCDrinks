@@ -1,6 +1,6 @@
 Tabla entidad - relacion 
 
-https://dbdiagram.io/d/NEW-FAST_FOOD_DB-66bd39458b4bb5230e26a6ad
+https://dbdiagram.io/d/TER-BD_AMCDrinks-Database-67045872fb079c7ebda709ad
 
 // BD_AMCDrinks Database
 
