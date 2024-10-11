@@ -14,6 +14,8 @@ CREATE TABLE Precios (
 	VendorNumber INT,
 	VendorName VARCHAR(200));
 
+/*Considerar cambiar el nombre de la columna Brand a BrandId para hacer mas claro el identificador unico. De igual manera para las demas PK.*/
+
 -- creacion de la tabla OrdenesCompra.
 CREATE TABLE OrdenesCompra(
 	VendorNumber INT,
@@ -26,6 +28,8 @@ CREATE TABLE OrdenesCompra(
 	Dollars DECIMAL(10,2) NOT NULL,
 	Freight DECIMAL(10,2) NOT NULL,
 	Approval VARCHAR(200));
+
+/*VendedorNumber y VendorName se repiten en varias tablas, si tiene mas detalles podria separarse en (Proveedores o Vendors) y referencias la tabla desde Precios y otras tablas. */
 
     -- creacion de la tabla InventarioInicial.
 CREATE TABLE InventarioInicial(
@@ -71,6 +75,7 @@ CREATE TABLE Compras(
 	Classification VARCHAR(50),
 	Id_Compras INT IDENTITY (1,1) PRIMARY KEY);
 
+
 	-- creacion de la tabla Ventas.
 CREATE TABLE Ventas(
 	InventoryId VARCHAR(50) NOT NULL,
@@ -89,6 +94,18 @@ CREATE TABLE Ventas(
 	VendorName VARCHAR(200),
 	Id_Ventas INT IDENTITY (1,1) PRIMARY KEY);
 
+/* Tabla compras y ventas, VendorNumber y VendorName  & VendorNo y VendorName, podrian normalizarse si hay una tabla de proveedores y agregar restricciones de clave externa en las columnas.
+
+CREATE TABLE Proveedores (
+    VendorNumber INT PRIMARY KEY,
+    VendorName VARCHAR(200) NOT NULL
+
+	ALTER TABLE Compras
+ADD CONSTRAINT FK_Compras_Proveedores
+FOREIGN KEY (VendorNumber) REFERENCES Proveedores(VendorNumber);
+
+con el fin de: Eliminar redundancias, Consistencia de datos, Facilidad de actualización (en un cambio de proveedor)
+);*/
 
 
 ------------------------------------------------------------------
